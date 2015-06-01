@@ -1,0 +1,39 @@
+# .screenrc
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
+# explanation of hardstatus string: 
+# 1st segment: change attr,black/brightGreen,[,brightGreen,$HOSTNAME,green,]
+# 2nd segment: [,center following,
+startup_message off
+defscrollback 200000
+#mousetrack on
+#caption always
+vbell off
+caption string "%?%f%{= bk}%? %c%a %d %d-%m-%y %{= kb} %t%= %?%f%{=bk}%:%{= wk}%? %n "
+caption splitonly
+#caption always "%n(%t) : %C"
+#
+#Another useful step is to make more user-friendly caption. A better variant of caption would be
+#
+#caption always "%3n %t%? @%u%?%? [%h]%?%=%c"
+#
+#Slightly more complex would be:
+#
+#caption always "%{= kc}%H (system load: %l)%-21=%{= .m}%D %d.%m.%Y %0c"
+
+termcapinfo xterm ti@:te@
+#termcapinfo rxvt-unicode ti@:te@  #enable shift-pgup / shift-pgdown scroll
+#shelltitle "$ | bash"
+#
+##  Toggle 'fullscreen' or not.
+##
+#bind f eval "caption splitonly" "hardstatus ignore"
+#bind F eval "caption always"    "hardstatus alwayslastline"
+bind f eval "hardstatus ignore" #splitonly"
+bind F eval "hardstatus alwayslastline"
+
+#Here are several useful resizing commands for a split screen.
+bind = resize =  # make split windows equal
+bind + resize +1 # increase current window size by one
+bind - resize -1 # decrease current window size by one
+bind _ resize max  # maximize the current window split
