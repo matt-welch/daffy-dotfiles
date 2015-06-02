@@ -13,28 +13,49 @@ set cursorline " Show the cursor line at all times
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
-"configure file complete to be list bash
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+"configure file complete to be like bash
 set wildmode=list:longest:full
 set wildmenu
+set wildignore +=*.o,*.out,*.obj,.git,*.class,*.pyc         " disable output files
+set wildignore +=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz    " disable archives
+set wildignore +=*.swp,*~,._*                               " disable backup/temp files
+
 syntax on
 
 " Make vim quiet.
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+" Prevent vim from clearing the terminal scrollback buffer when it exits
+set t_ti= t_te=
+
+" ============================================================================
+" Editing
+" ============================================================================
+
+"" Whitespace
+
 " set tab stops and space-equivalence
 " (TODO: should use 'real' tabs for " Makefiles, etc)
 "set lines=50 columns=120
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set number
+set expandtab       " Tab in insert mode will produce spaces
+set tabstop=4       " width of a tab (in spaces)
+set shiftwidth=4    " width of a re-indent operation and auto-indent
+set softtabstop=4   " set spaced for tab in insert mode
+set autoindent      " enable auto indentation
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+" Backspace over everything in insert mode
+set backspace=indent,eol,start
+" below enumerates typical nonprinting characters to be showed with 'set list'
+" or can be hidden with the command 'set nolist' or 'set list!'
+set nolist  " don't show invisible chars by default
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,nbsp:_
+" set listchars=tab:-\ ,trail:-,eol:$,nbsp:_,extends:.>precedes:.<
 
 " mappings to allow window navigation with Ctrl-navigation keys [JMW]
 noremap <C-l> <C-w>l
@@ -46,11 +67,24 @@ noremap <C-k> <C-w>k
 " let mapleader='\\'    " escape with backslash
 " let mapleader=','     " replace leader with ','
 
-" mappings to quickly toggle search highlight, numbers, listchars
+" mappings to quickly toggle search highlight, numbers, listchars, paste
 noremap <Leader>h :set hlsearch!<cr>
 noremap <Leader>n :set number!<cr>
 noremap <Leader>l :set list!<cr>
 noremap <Leader>p :set paste!<cr>
+map <Leader>y "*y
+
+""
+"" Search
+""
+
+set hlsearch   " Highlight searches
+set incsearch  " Highlight dynamically as pattern is typed
+set ignorecase " Make searches case-insensitive...
+set smartcase  " ...unless they contain at least one uppercase character
+set gdefault   " Use global search by default
+
+
 
 " Options incompatible with vi, but good for vim:
 if !has("compatible")
@@ -58,5 +92,29 @@ if !has("compatible")
     colorscheme elflord
     " desert is similar to elflord, but darker colors
 endif
+
+" ============================================================================
+" Appearance
+" ============================================================================
+set title
+set cursorline
+set ruler
+set background=dark
+set number
+
+
+" =============================================================================
+" Typos, Errors, and Typing Discipline
+" =============================================================================
+
+" Disable arrow keys in normal mode and insert mode
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
 
 
