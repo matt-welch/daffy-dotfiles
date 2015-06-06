@@ -1,6 +1,9 @@
 #!/bin/bash
-ln -s ./vimrc ~/.vimrc
-ln -s ./screenrc ~/.screenrc
+echo Linking vimrc to ~/.vimrc
+ln -s $(pwd)/vimrc ~/.vimrc
+echo Linking screenrc to ~/.screenrc
+ln -s $(pwd)/screenrc ~/.screenrc
+echo Setting git configuration
 git config user.name "Matt Welch"
 git config user.email "mattw0308@gmail.com"
 git config core.editor "vim"
