@@ -89,7 +89,7 @@ set gdefault   " Use global search by default
 " Options incompatible with vi, but good for vim:
 if !has("compatible")
     " default colorscheme - vi doesn't have this elflord
-    colorscheme elflord
+    colorscheme evening
     " desert is similar to elflord, but darker colors
 endif
 
