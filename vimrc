@@ -7,6 +7,11 @@ source $VIMRUNTIME/vimrc_example.vim
 "Copied from debian.vim
 set nocompatible
 
+" start up pathogen plugin manager
+execute pathogen#infect()
+syntax on " always do syntax highlighting
+filetype plugin indent on
+
 " Now we set some defaults for the editor
 set history=50 " keep 50 lines of command line history
 " Suffixes that get lower priority when doing tab completion for filenames.
@@ -72,7 +77,6 @@ set nolist  " don't show invisible chars by default
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,nbsp:_
 " set listchars=tab:-\ ,trail:-,eol:$,nbsp:_,extends:.>precedes:.<
 
-syntax on " always do syntax highlighting
 " mappings to allow window navigation with Ctrl-navigation keys [JMW]
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
@@ -159,7 +163,6 @@ endif
 " " ============================================================================
 " " Plugins, macros, etc.
 " " ============================================================================
-" filetype plugin indent on
 " 
 " " Personalization
 " let g:snips_author = 'Matt Welch'
