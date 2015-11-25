@@ -1,0 +1,19 @@
+# added by Matt Welch
+# emphasize the next word
+snippet emph
+	\emph{${1:word}}${2} 
+# create an autocite for a reference
+snippet auto
+	\autocite{${1:author}}${2}
+# create an in-document reference
+snippet ref
+	\ref{${1:sec:some_section}}${2}
+# create an in-document reference with section symbol
+snippet sref
+	Section~\ref{${1:sec:some_section}}${2}
+# create an inline code listing (courier)
+snippet lsti
+	\lstinline{${1:inlinecode}}${2}
+# create a typewriter-font text block (doesn't need \listings like above)
+snippet ttt
+	\texttt{${1:typewriter text}}${2}

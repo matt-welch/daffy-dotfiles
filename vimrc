@@ -165,7 +165,7 @@ endif
 " " ============================================================================
 " 
 " " Personalization
-" let g:snips_author = 'Matt Welch'
+let g:snips_author = 'Matt Welch'
 " 
 " " Toggling Autowrap (from: http://vim.wikia.com/wiki/Toggle_auto-wrap)
 " set sr fo=roqm1 tw=78

@@ -15,4 +15,7 @@ git config --global push.default simple
 git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff
 
+# initialize submodules
+git submodule init
+git submodule update
 

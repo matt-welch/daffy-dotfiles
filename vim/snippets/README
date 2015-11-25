@@ -1,0 +1,12 @@
+This directory contains custom snippets that will likely conflict with those provided by snipMate.vim
+Simply append a description after the trigger text as shown below.
+
+From the vim :help multi_snips: 
+
+To specify that a snippet can have multiple matches in a *.snippets file, use
+this syntax:
+
+ snippet trigger A description of snippet #1
+        expand this text
+ snippet trigger A description of snippet #2
+        expand THIS text!

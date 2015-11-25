@@ -1,0 +1,53 @@
+snippet init
+	- (id)init
+	{
+		[super init];
+		return self;
+	}
+snippet ifself
+	if (self = [super init]) {
+		${1:/* code */}
+	}
+	return self;
+# Category
+snippet cat
+	@interface ${1:NSObject} (${2:Category})
+	@end
+
+	@implementation $1 ($2)
+	${3}
+	@end
+# Category Interface
+snippet cath
+	@interface ${1:NSObject} (${2:Category})
+	${3}
+	@end
+# NSArray
+snippet array
+	NSMutableArray *${1:array} = [NSMutable array];${2}
+# NSDictionary
+snippet dict
+	NSMutableDictionary *${1:dict} = [NSMutableDictionary dictionary];${2}
+# NSBezierPath
+snippet bez
+	NSBezierPath *${1:path} = [NSBezierPath bezierPath];${2}
+# Class Method
+snippet M
+	+ (${1:id})${2:method}
+	{${3}
+		return nil;
+	}
+# Method: Initialize
+snippet I
+	+ (void) initialize
+	{
+		[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWIthObjectsAndKeys:
+			${1}@"value", @"key",
+			nil]];
+	}
+# release
+snippet rel
+	[${1:foo} release];
+	${2:$1 = nil;}
+snippet prag
+	#pragma mark ${1:foo}
