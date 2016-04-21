@@ -1,0 +1,56 @@
+# <type>: (If applied, this commit will...) <subject> (Max 50 char)
+# |<----  Using a Maximum Of 50 Characters  ---->|
+
+
+# Explain why this change is being made
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+# Provide links or keys to any relevant tickets, articles or other resources
+# Example: Github issue #23
+
+# --- COMMIT END ---
+# Type should be one of the following: 
+#    feat     (new feature)
+#    fix      (bug fix)
+#    refactor (refactoring production code)
+#    style    (formatting, missing semi colons, etc; no code change)
+#    docs     (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    chore    (updating grunt tasks etc; no production code change)
+# --------------------
+# Remember to
+#    Capitalize the subject line
+#    Use the imperative mood in the subject line
+#    Do not end the subject line with a period
+#    Separate subject from body with a blank line
+#    Use the body to explain what and why vs. how
+#    Can use multiple lines with "-" for bullet points in body
+# --------------------
+# Fun stuff!
+# commit messages can be prefixed with emoji for added context
+#
+#    :art: when improving the format/structure of the code
+#    :racehorse: when improving performance
+#    :non-potable_water: when plugging memory leaks
+#    :memo: when writing docs
+#    :penguin: when fixing something on Linux
+#    :apple: when fixing something on Mac OS
+#    :checkered_flag: when fixing something on Windows
+#    :bug: when fixing a bug
+#    :fire: when removing code or files
+#    :green_heart: when fixing the CI build
+#    :white_check_mark: when adding tests
+#    :lock: when dealing with security
+#    :arrow_up: when upgrading dependencies
+#    :arrow_down: when downgrading dependencies
+#    :shirt: when removing linter warnings
+#
+# Example:
+# :fire: feat (buybox): removed unused container elements
+# -----------------
+#
+# This template was taken, borrowed, and adapted from the following: 
+# https://gist.github.com/adeekshith/cd4c95a064977cdc6c50
+# https://gist.github.com/Linell/bd8100c4e04348c7966d
+# https://github.com/sparkbox/standard/tree/master/style/git
+
