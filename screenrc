@@ -1,8 +1,8 @@
 # .screenrc
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
-# explanation of hardstatus string: 
-# 1st segment: change attr,black/brightGreen,[,brightGreen,$HOSTNAME,green,]
+hardstatus string '%{= kG}[ %{G}%H ]%{g}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
+# explanation of hardstatus string [by brackets] 
+# 1st segment: change attr,black/brightGreen,[,brightGreen,$HOSTNAME,],green
 # 2nd segment: [,center following,
 startup_message off
 defscrollback 200000
