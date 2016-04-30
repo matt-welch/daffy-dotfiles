@@ -1,10 +1,16 @@
-" source: github.com:matt-welch/daffy-dotfiles.git
+" Matt's vimrc file 
+"
+" Maintainer: Matt Welch <mattw0308@gmail.com>
+" Website: https://github.com/matt-welch/daffy-dotfiles
+"
 " ============================================================================
 " Program Behavior
 " ============================================================================
+" NOTE: where possible, the comments from Bram Moolenar's vimrc_example.vim
+" are pasted with the commands for clarity
 
-source $VIMRUNTIME/vimrc_example.vim
-"Copied from debian.vim
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 
 " start up pathogen plugin manager
@@ -63,6 +69,7 @@ endif
 " set tab stops and space-equivalence
 " (TODO: should use 'real' tabs for " Makefiles, etc)
 "set lines=50 columns=120
+set modeline        " enable modelines 
 set expandtab       " Tab in insert mode will produce spaces
 set tabstop=4       " width of a tab (in spaces)
 set shiftwidth=4    " width of a re-indent operation and auto-indent
@@ -238,4 +245,5 @@ let g:snips_author = 'Matt Welch'
 " 
 " "let g:clang_complete_auto = 1
 " let g:clang_use_library = 0
+
 " 
