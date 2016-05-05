@@ -12,6 +12,10 @@ case "$TERM" in
         # screen takes forever to connect to clipboard when opening vim, disable X-clipboard
         alias vim='vim -X'
         ;;
+    xterm)
+        # xterm is slow too :((when opening vim, disable X-clipboard
+        alias vim='vim -X'
+        ;;
     *)
         ;;
 esac
