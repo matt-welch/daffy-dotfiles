@@ -24,6 +24,7 @@ git config --global commit.template ${SRC_DIR}/git-commit-template.txt
 git config --global color.ui true
 git config --global color.status.header "white normal dim"
 git config --global color.status.untracked "white normal"
+git config --global "alias.cv" "commit --verbose"
 
 # initialize submodules
 git submodule init
