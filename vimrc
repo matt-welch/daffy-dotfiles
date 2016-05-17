@@ -75,6 +75,9 @@ set tabstop=4       " width of a tab (in spaces)
 set shiftwidth=4    " width of a re-indent operation and auto-indent
 set softtabstop=4   " set spaced for tab in insert mode
 set autoindent      " enable auto indentation
+set formatoptions += ro " insert comment leader when hit return in insert mode
+                        " or when entering a new line
+
 
 " Backspace over everything in insert mode
 set backspace=indent,eol,start
@@ -94,9 +97,8 @@ noremap <C-k> <C-w>k
 " let mapleader='\\'    " escape with backslash
 " let mapleader=','     " replace leader with ','
 
-" mappings to quickly toggle search highlight, numbers, listchars, paste
+" mappings to quickly toggle search highlight, listchars, paste
 noremap <Leader>h :set hlsearch!<cr>
-noremap <Leader>n :set number!<cr>
 noremap <Leader>l :set list!<cr>
 noremap <Leader>p :set paste!<cr>
 noremap <Leader>y "*y
@@ -128,7 +130,34 @@ set title
 " set cursorline " Show the cursor line at all times 
 set ruler       " show the cursor position all the time
 set background=dark
-set number
+
+" ---------------------
+" manage line numbers.
+" Based on the excellent advice in:
+" http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+" noremap <Leader>n :set number!<cr>
+nnoremap <Leader>n :call NumberToggle()<cr>
+
+" automatically switch to absolute line numbers whenever Vim loses focus,
+" since we don’t really care about the relative line numbers unless we’re moving around:
+"autocmd FocusLost * :set number
+"autocmd FocusGained * :set relativenumber
+
+" tell Vim to automatically use absolute line numbers when we’re in insert
+" mode and relative numbers when we’re in normal mode:
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+" ---------------------
+
 " maybe useful for adjusting vim-size to console size
 "set lines=50 columns=120
 
@@ -153,14 +182,14 @@ endif
 " Disable arrow keys in normal mode and insert mode
 " This may be nice for typing discipline but it pisses people off if their 
 " expecting arrow keys to, you know, work.  Disabled by default.
-" noremap <left> <nop>
-" noremap <right> <nop>
-" noremap <up> <nop>
-" noremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
 
 " Turn this on if it's irritating, but better off for safety
 " set hidden  " don't prompt to save when leaving a modified buffer
@@ -246,4 +275,5 @@ let g:snips_author = 'Matt Welch'
 " "let g:clang_complete_auto = 1
 " let g:clang_use_library = 0
 
-" 
+" vim:set et ts=4 sw=4 sts=3 ai tw=80
+
