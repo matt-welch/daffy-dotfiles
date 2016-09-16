@@ -4,3 +4,12 @@
 [submodule "vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "vim-distinguished"]
+    path = vim/bundle/vim-distinguished
+    url = https://github.com/Lokaltog/vim-distinguished.git
+[submodule "jellybeans.vim"]
+    path = vim/bundle/jellybeans.vim
+    url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "badwolf"]
+    path = vim/bundle/badwolf
+    url = https://github.com/sjl/badwolf.git
