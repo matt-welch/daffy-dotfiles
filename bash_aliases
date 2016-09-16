@@ -5,6 +5,9 @@ alias mount_priv='~/mount-sharedrive.sh private'
 alias update-all-the-things='sudo apt-get update && sudo apt-get upgrade'
 alias tinyprompt='export PS1="${debian_chroot:+($debian_chroot)}\u@\h:[\W]\$ "'
 alias gs='git status'
+alias vlxc="virsh -c lxc:///" 
+alias dim='docker images'
+alias dpsa='docker ps -a'
 
 # if this is a screen window, prevent vim from connecting to the X-clipboard which is often VERY slow
 case "$TERM" in 

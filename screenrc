@@ -21,6 +21,12 @@ caption splitonly
 #
 #caption always "%{= kc}%H (system load: %l)%-21=%{= .m}%D %d.%m.%Y %0c"
 
+# turn on "nethack mode" to make status messages nethack-like
+# e.g. Message on quit of copy mode
+# normal mode: Copy mode - (Column ...)
+# nethack mode: Welcome to the hacker's treasure zoo - (Column ...)
+nethack on
+
 termcapinfo xterm ti@:te@
 #termcapinfo rxvt-unicode ti@:te@  #enable shift-pgup / shift-pgdown scroll
 #shelltitle "$ | bash"
@@ -37,3 +43,8 @@ bind = resize =  # make split windows equal
 bind + resize +1 # increase current window size by one
 bind - resize -1 # decrease current window size by one
 bind _ resize max  # maximize the current window split
+
+# command to spawn an ephemeral docker container in a new screen window
+# useful for trying out things that you don't want to clutter up command history
+# or screen buffers
+bind J screen -t ephemeral docker run -it --rm --privileged s3p/dockenstack:latest /bin/bash 
