@@ -122,6 +122,12 @@ set wildignore +=*.swp,*~,._*                               " disable backup/tem
 
 " tags options: 
 set tags=tags,./tags,./src/tags;/
+" Taglist options
+" Open taglist with ,tl
+nmap <leader>tl :TlistToggle<cr>
+" Taglist plugin opens on the right, rather than the left
+let Tlist_Use_Right_Window = 1
+
 
 " ============================================================================
 " Appearance
