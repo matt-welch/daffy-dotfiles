@@ -13,10 +13,6 @@
 [submodule "badwolf"]
     path = vim/bundle/badwolf
     url = https://github.com/sjl/badwolf.git
-[submodule "taglist.vim"] 
-    path = vim/bundle/taglist.vim
-    url = https://github.com/vim-scripts/taglist.vim.git
-
 [submodule "vim/bundle/taglist.vim"]
 	path = vim/bundle/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
