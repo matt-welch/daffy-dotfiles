@@ -1,5 +1,8 @@
 #!/bin/bash
 # file: set_git_config.sh
+
+CWD=$(pwd)
+SRC_DIR=${SRC_DIR:-$CWD}
 echo Setting git configuration
 git config --global user.name "Matt Welch"
 git config --global user.email "mattw0308@gmail.com"

@@ -1,6 +1,6 @@
 #!/bin/bash
 # assumes the install script is executed from its home directory - not safe! 
-SRC_DIR=$(pwd) 
+export SRC_DIR=$(pwd) 
 
 DOTFILE_LIST=( "vimrc" "vim" "screenrc" "tmux.conf" "bash_aliases" )
 
