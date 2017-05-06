@@ -173,10 +173,19 @@ else
     set guifont=DejaVu\ Sans\ Mono\ 10
 endif
 
+" additions to make vim more compatible with varied color terminals
+" https://push.cx/2008/256-color-xterms-in-ubuntu
+if &t_Co > 2 || has("gui_running")
+    syntax on
+endif
 " Options incompatible with vi, but good for vim:
 if !has("compatible")
     " default colorscheme - vi doesn't have this elflord
-    colorscheme evening
+    if &t_Co == 256
+        colorscheme jellybeans
+    else
+        colorscheme evening
+    endif
     " desert is similar to elflord, but darker colors
 endif
 
@@ -188,14 +197,14 @@ endif
 " Disable arrow keys in normal mode and insert mode
 " This may be nice for typing discipline but it pisses people off if their 
 " expecting arrow keys to, you know, work.  Disabled by default.
-noremap <left> <nop>
-noremap <right> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
 
 " Turn this on if it's irritating, but better off for safety
 " set hidden  " don't prompt to save when leaving a modified buffer
