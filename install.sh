@@ -19,7 +19,7 @@ ln -s ${SRC_DIR}/bash_aliases ~/.bash_aliases
 
 echo Linking pythonrc to ~/.pythonrc
 ln -s ${SRC_DIR}/pythonrc ~/.pythonrc
-echo "PYTHONSTARTUP=$HOME/.pythonrc" >> $HOME/.bashrc
+echo "export PYTHONSTARTUP=$HOME/.pythonrc" >> $HOME/.bashrc
 
 ./set_git_config.sh
 
