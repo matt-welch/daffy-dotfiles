@@ -5,7 +5,7 @@ CWD=$(pwd)
 SRC_DIR=${SRC_DIR:-$CWD}
 echo Setting git configuration
 git config --global user.name "Matt Welch"
-git config --global user.email "mattw0308@gmail.com"
+git config --global user.email "matt.welch@intel.com"
 git config --global core.editor "vim"
 git config --global push.default current
 git config --global diff.tool vimdiff

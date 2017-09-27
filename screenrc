@@ -1,7 +1,7 @@
 # .screenrc
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H ]%{g}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
-# explanation of hardstatus string [by brackets] 
+# explanation of hardstatus string [by brackets]
 # 1st segment: change attr,black/brightGreen,[,brightGreen,$HOSTNAME,],green
 # 2nd segment: [,center following,
 startup_message off
@@ -27,6 +27,10 @@ caption splitonly
 # nethack mode: Welcome to the hacker's treasure zoo - (Column ...)
 nethack on
 
+# set terminal to 256 colors because 8 is terrible :/
+term screen-256color
+# if the above doesn't work, try below
+# term xterm-256color
 termcapinfo xterm ti@:te@
 #termcapinfo rxvt-unicode ti@:te@  #enable shift-pgup / shift-pgdown scroll
 #shelltitle "$ | bash"
@@ -47,4 +51,4 @@ bind _ resize max  # maximize the current window split
 # command to spawn an ephemeral docker container in a new screen window
 # useful for trying out things that you don't want to clutter up command history
 # or screen buffers
-bind J screen -t ephemeral docker run -it --rm --privileged s3p/dockenstack:latest /bin/bash 
+bind J screen -t ephemeral docker run -it --rm --privileged s3p/dockenstack:latest /bin/bash

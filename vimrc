@@ -176,10 +176,19 @@ else
     set guifont=DejaVu\ Sans\ Mono\ 10
 endif
 
+" additions to make vim more compatible with varied color terminals
+" https://push.cx/2008/256-color-xterms-in-ubuntu
+if &t_Co > 2 || has("gui_running")
+    syntax on
+endif
 " Options incompatible with vi, but good for vim:
 if !has("compatible")
     " default colorscheme - vi doesn't have this elflord
-    colorscheme evening
+    if &t_Co == 256
+        colorscheme jellybeans
+    else
+        colorscheme evening
+    endif
     " desert is similar to elflord, but darker colors
 endif
 
