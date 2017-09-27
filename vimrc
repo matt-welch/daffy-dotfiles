@@ -102,6 +102,9 @@ noremap <Leader>h :set hlsearch!<cr>
 noremap <Leader>l :set list!<cr>
 noremap <Leader>p :set paste!<cr>
 noremap <Leader>y "*y
+noremap <Leader>n :cn<cr>
+noremap <Leader>b :cp<cr>
+
 
 ""
 "" Search
@@ -151,7 +154,7 @@ function! NumberToggle()
 endfunc
 
 " noremap <Leader>n :set number!<cr>
-nnoremap <Leader>n :call NumberToggle()<cr>
+nnoremap <Leader>m :call NumberToggle()<cr>
 
 " automatically switch to absolute line numbers whenever Vim loses focus,
 " since we don’t really care about the relative line numbers unless we’re moving around:
@@ -188,14 +191,14 @@ endif
 " Disable arrow keys in normal mode and insert mode
 " This may be nice for typing discipline but it pisses people off if their 
 " expecting arrow keys to, you know, work.  Disabled by default.
-noremap <left> <nop>
-noremap <right> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
 
 " Turn this on if it's irritating, but better off for safety
 " set hidden  " don't prompt to save when leaving a modified buffer

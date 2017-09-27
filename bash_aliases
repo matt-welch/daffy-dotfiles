@@ -4,6 +4,7 @@ alias mount_shar='~/mount-sharedrive.sh shared'
 alias mount_priv='~/mount-sharedrive.sh private'
 alias update-all-the-things='sudo apt-get update && sudo apt-get upgrade'
 alias tinyprompt='export PS1="${debian_chroot:+($debian_chroot)}\u@\h:[\W]\$ "'
+alias gitprompt='export PS1="${debian_chroot:+($debian_chroot)}\u@\h:[\W]$(__git_ps1)\$ "'
 # git aliases
 alias git-proxy-remote='export GIT_PROXY_COMMAND="~/git-proxy-wrapper"'
 alias gs='git status'
