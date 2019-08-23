@@ -219,5 +219,11 @@ endif
 " Personalization
 let g:snips_author = 'Matt Welch'
 
+" Macros
+" ===================
+" Open a vertical split, switch to it, search for 'diff', zt to scroll the
+" line to the top of the buffer:
+let @g = ':vsp/diffztjj'
+
 " vim:set et ts=4 sw=4 sts=3 ai tw=80
 
