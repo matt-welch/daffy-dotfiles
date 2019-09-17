@@ -93,6 +93,12 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 
+" rearrange splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " default leader is '\'.
 " let mapleader='\\'    " escape with backslash
 " let mapleader=','     " replace leader with ','
@@ -218,6 +224,22 @@ endif
 
 " Personalization
 let g:snips_author = 'Matt Welch'
+
+" autocmd to add tags file for python when python files are loaded
+autocmd BufRead,BufNewFile *.py setlocal tags+=/usr/local/lib/python2.7/.tags
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" easier (un)folding
+nnoremap <space> za
+nnoremap <Leader>e :sp /usr/local/lib/python2.7/dist-packages/neutron_lib/<CR>
 
 " Macros
 " ===================
