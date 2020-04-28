@@ -78,7 +78,6 @@ set autoindent      " enable auto indentation
 set formatoptions += ro " insert comment leader when hit return in insert mode
                         " or when entering a new line
 
-
 " Backspace over everything in insert mode
 set backspace=indent,eol,start
 " below enumerates typical nonprinting characters to be showed with 'set list'
@@ -87,12 +86,13 @@ set nolist  " don't show invisible chars by default
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,nbsp:_
 " set listchars=tab:-\ ,trail:-,eol:$,nbsp:_,extends:.>precedes:.<
 
+"" Window Handling and Navigation
+
 " mappings to allow window navigation with Ctrl-navigation keys [JMW]
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
-
 " rearrange splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -102,6 +102,8 @@ nnoremap <C-H> <C-W><C-H>
 " default leader is '\'.
 " let mapleader='\\'    " escape with backslash
 " let mapleader=','     " replace leader with ','
+
+"" Leader mappings
 
 " mappings to quickly toggle search highlight, listchars, paste
 noremap <Leader>h :set hlsearch!<cr>
@@ -130,10 +132,16 @@ set wildignore +=*.swp,*~,._*                               " disable backup/tem
 
 
 " tags options: 
-set tags=tags,./tags,./src/tags;/
+set tags=/root/workspace/.tags
+" Additional tag locations: .tags,tags,./tags,./src/tags,./src/.tags,
+
 " Taglist options
-" Open taglist with ,tl
+" Open taglist with \tl
 nmap <leader>tl :TlistToggle<cr>
+
+" [t]ags [m]ake
+nmap <leader>tm :!find /root/workspace -name \*.java > /root/workspace/source_files && ctags -R --extra=+f -f /root/workspace/.tags -L /root/workspace/source_files<cr>
+
 " Taglist plugin opens on the right, rather than the left
 let Tlist_Use_Right_Window = 1
 
@@ -191,7 +199,7 @@ endif
 if !has("compatible")
     " default colorscheme - vi doesn't have this elflord
     if &t_Co == 256
-        colorscheme jellybeans
+        colorscheme elflord "jellybeans
     else
         colorscheme evening
     endif
